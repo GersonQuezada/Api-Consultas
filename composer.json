@@ -1,0 +1,8 @@
+{
+    "require": {
+        "szenis/routing": "^2.0",
+        "firebase/php-jwt": "^6.4",
+        "pecee/simple-router": "^5.1",
+        "easy-projects/simple-router": "^7.3"
+    }
+}

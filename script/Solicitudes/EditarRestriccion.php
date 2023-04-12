@@ -1,0 +1,15 @@
+<?php
+	require_once('../coneccion.php'); //se realiza la coneccion
+ 	$cnn =new Modelador();
+	$dbh = $cnn->conexion();  
+	$sql_vars = array();
+	// $sql_vars['a1'] = $_POST['fecha']; 
+	$sql_vars['a1'] = $cnn->Dateformat($_POST['fecha']);   	
+	$sql_vars['a2'] = $_POST['value'];	 
+	$statement = $dbh->prepare($cnn->Editar_Restriccion_solicitudes($sql_vars));	
+		if($statement->execute()){
+			$rt['data'] = 1;
+  	 		echo 1;
+		}else{
+			print_r($statement->errorInfo());
+		}
